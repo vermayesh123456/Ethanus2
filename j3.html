@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            padding-top: 100px;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to top right,rgba(215, 1, 144, 0.742),rgba(10, 2, 252, 0.377));
+            border-radius: 4px;
+            padding: 40px;
+        }
+        .in{
+            margin: 5px;
+            padding: 3px;
+        }
+        label,p{
+            margin-right: 5px;
+            font-family:monospace;
+
+        }
+        .bt{
+            margin-right: 5px;
+        }
+        button{
+            font-family:monospace;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+    <Div  class="in"> 
+        <label for="firstnumber">1st Number:</label>
+        <input type="text" id="firstnumber" placeholder="enter first number">
+    </Div>
+    <div class="in">
+        <label for="secondnumber">1st Number:</label>
+        <input type="text" id="secondnumber" placeholder="enter first number">
+
+    </div>
+    <div class="bt">
+        <button onclick="Multiply()">Multiply</button>
+        <button onclick="Divide()">Divide</button>
+    </div>
+    <div>
+        <p id="operation">The Result is:</p>
+    </div>
+    </div>
+
+    <script>
+        
+        function Multiply(){
+            var a=Number.parseInt(document.getElementById("firstnumber").value);
+            var b=Number.parseInt(document.getElementById("secondnumber").value);
+            var res=a*b;
+            document.getElementById("operation").innerHTML="The Result is:"+" "+res;
+        }
+        function Divide(){
+            var a=Number.parseInt(document.getElementById("firstnumber").value);
+            var b=Number.parseInt(document.getElementById("secondnumber").value);
+            var res=a/b;
+            document.getElementById("operation").innerHTML="The Result is:"+" "+res;
+        }
+    </script>
+</body>
+</html>

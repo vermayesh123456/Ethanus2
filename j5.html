@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .warning {
+            color: red;
+        }
+        .success{
+            color: rgb(1, 189, 1);
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <span class="warning" id="name-warning"></span>
+        <span class="success" id="name-success"></span>
+    </div>
+    <br>
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email">
+        <span class="warning" id="email-warning"></span>
+        <span class="success" id="email-success"></span>
+    </div>
+    <br>
+    <div>
+        <label for="website">Website:</label>
+        <input type="text" id="website">
+        <span class="warning" id="website-warning"></span>
+        <span class="success" id="website-success"></span>
+    </div>
+    <br>
+    <div style="display: flex ;">
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" cols="20" rows="4"></textarea>
+        <span class="warning" id="message-warning"></span>
+        <span class="success" id="message-success"></span>
+    </div>
+    <br>
+    <div>
+        <button type="button" onclick="check()">Submit</button>
+    </div>
+
+    <script>
+        function check() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var website = document.getElementById("website").value;
+            var message = document.getElementById("message").value;
+
+            
+            document.getElementById("name-warning").innerHTML = "";
+            document.getElementById("name-success").innerHTML = "";
+            document.getElementById("email-warning").innerHTML = "";
+            document.getElementById("website-warning").innerHTML = "";
+            document.getElementById("message-warning").innerHTML = "";
+
+
+            
+            if (name === "") {
+                document.getElementById("name").style.borderColor = "red";
+                document.getElementById("name-warning").innerHTML = "Enter your name.";
+            }
+            else{
+                document.getElementById("name-success").innerHTML = "✓";
+            }
+            if (email === "") {
+                document.getElementById("email").style.borderColor = "red";
+                document.getElementById("email-warning").innerHTML = "Enter your email.";
+            }
+            else{
+                document.getElementById("email-success").innerHTML = "✓";
+            }
+            if (website === "") {
+                document.getElementById("website").style.borderColor = "red";
+                document.getElementById("website-warning").innerHTML = "Enter your website.";
+            }
+            else{
+                document.getElementById("website-success").innerHTML = "✓";
+            }
+            if (message === "") {
+                document.getElementById("message").style.borderColor = "red";
+                document.getElementById("message-warning").innerHTML = "Enter your message.";
+            }
+            else{
+                document.getElementById("message-success").innerHTML = "✓";
+            }
+        }
+    </script>
+</body>
+</html>
